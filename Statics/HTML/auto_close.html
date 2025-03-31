@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swoosh Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .logo {
+            font-size: 100px;
+        }
+        .slogan {
+            font-size: 24px;
+            color: #555;
+        }
+    </style>
+    <script>
+        function getLangParameter() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('lang');
+        }
+
+        function setSlogan() {
+            const lang = getLangParameter();
+            const sloganElement = document.querySelector('.slogan');
+            if (lang === 'en') {
+                sloganElement.textContent = 'Everything is going to be alright!';
+            } else {
+                sloganElement.textContent = 'すべてがうまくいくでしょう！';
+            }
+        }
+
+        window.onload = setSlogan;
+    </script>
+</head>
+<body>
+    <script>
+        function closeWindow() {
+            window.close();
+        }
+        closeWindow();
+    </script>
+    <div class="container">
+        <div class="logo">✔️</div>
+        <div class="slogan"></div>
+    </div>
+</body>
+</html>
